@@ -41,10 +41,20 @@ describe('Testes da Funcionalidade Usuários', () => {
 
      it('Deve validar um usuário com email inválido', () => {
           //TODO:
+          cy.cadastrarUsuario('Fulano da Silva', '1234@fulano', 'teste', 'true')
+               .then((response) => {
+                    expect(response.status).to.equal(400)
+                    expect(response.duration).to.be.lessThan(10)
+               })
+     });
+
+     it('Deve validar um usuário com email repetido', () => {
+          //TODO:
           cy.cadastrarUsuario('Fulano da Silva', 'fulano@qa.com', 'teste', 'true')
                .then((response) => {
                     expect(response.status).to.equal(400)
                     expect(response.duration).to.be.lessThan(10)
+                    expect(response.body.message).to.equal('Este email já está sendo usado')
                })
      });
 
@@ -68,7 +78,7 @@ describe('Testes da Funcionalidade Usuários', () => {
                     }).then(response => {
                          expect(response.status).to.equal(200)
                          expect(response.body.message).to.equal('Registro alterado com sucesso')
-                         expect(response.duration).to.be.lessThan(12)
+                         expect(response.duration).to.be.lessThan(20)
                     })
                })
      });
