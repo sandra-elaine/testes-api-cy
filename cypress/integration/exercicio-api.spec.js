@@ -24,7 +24,7 @@ describe('Testes da Funcionalidade Usuários', () => {
           }).then((response) => {
                expect(response.status).to.equal(200)
                expect(response.body).to.have.property('usuarios')
-               expect(response.duration).to.be.lessThan(25)
+               expect(response.duration).to.be.lessThan(20)
           })
      });
 
@@ -35,7 +35,7 @@ describe('Testes da Funcionalidade Usuários', () => {
                .then((response) => {
                     expect(response.status).to.equal(201)
                     expect(response.body.message).to.equal('Cadastro realizado com sucesso')
-                    expect(response.duration).to.be.lessThan(15)
+                    expect(response.duration).to.be.lessThan(80)
                })
      });
 

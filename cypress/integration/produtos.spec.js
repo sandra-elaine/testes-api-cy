@@ -51,7 +51,7 @@ describe('Testes da Funcionalidade Produtos', () => {
             })
     });
 
-    it.only('Deve editar um produto já cadastrado', () => {
+    it('Deve editar um produto já cadastrado', () => {
         cy.request('produtos').then(response => {
             let id = response.body.produtos[0]._id
             cy.request({
@@ -60,7 +60,7 @@ describe('Testes da Funcionalidade Produtos', () => {
                 headers: {authorization: token}, 
                 body: 
                 {
-                    "nome": "Produto Editado",
+                    "nome":"Novo Produto",
                     "preco": 100,
                     "descricao": "Produto editado",
                     "quantidade": 100
