@@ -44,7 +44,7 @@ describe('Testes da Funcionalidade Usuários', () => {
           cy.cadastrarUsuario('Fulano da Silva', '1234@fulano', 'teste', 'true')
                .then((response) => {
                     expect(response.status).to.equal(400)
-                    expect(response.duration).to.be.lessThan(10)
+                    expect(response.duration).to.be.lessThan(15)
                })
      });
 
