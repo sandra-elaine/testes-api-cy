@@ -41,7 +41,7 @@ describe('Testes da Funcionalidade Usuários', () => {
 
      it('Deve validar um usuário com email inválido', () => {
           //TODO:
-          cy.cadastrarUsuario('Fulano da Silva', '1234@fulano', 'teste', 'true')
+          cy.cadastrarUsuario('Fulano da Silva', '1234a@fulano', 'teste', 'true')
                .then((response) => {
                     expect(response.status).to.equal(400)
                     expect(response.duration).to.be.lessThan(15)
