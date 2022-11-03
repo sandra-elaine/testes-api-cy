@@ -60,7 +60,7 @@ describe('Testes da Funcionalidade Produtos', () => {
                 headers: {authorization: token}, 
                 body: 
                 {
-                    "nome":"New product",
+                    "nome":"Cadeira",
                     "preco": 150,
                     "descricao": "Produto editado",
                     "quantidade": 100
